@@ -18,9 +18,12 @@ function add_selection(x) {
 
 function delete_selection(x) {
     console.log(x);
-    quantities[x] = quantities[x] - 1;
-    totals[x] = prices[x] * quantities[x];
-    totalOrderAmt -= prices[x];
+    if (quantities[x] > 0) {
+        quantities[x] = quantities[x] - 1;
+        totals[x] = prices[x] * quantities[x];
+        totalOrderAmt -= prices[x];
+
+    }
 
     display_all();
 }
